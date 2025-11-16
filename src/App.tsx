@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Flex, TextAreaField, Loader, Text, View, Button } from "@aws-amplify/ui-react"
 import { useAIGeneration } from "./client";
 
+
 export default function App() {
   const [description, setDescription] = React.useState("");
   const [{ data, isLoading }, generateRecipe] =

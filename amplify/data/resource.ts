@@ -10,8 +10,8 @@ const schema = a.schema({
 
   // This adds a new generation route to your Amplify Data backend.
   generateRecipe: a.generation({
-    aiModel: a.ai.model('Claude 3.5 Haiku'),
-    systemPrompt: 'You are a helpful assistant that generates recipes.',
+    aiModel: a.ai.model('Claude 3.5 Sonnet'),
+    systemPrompt: 'You are a helpful recipe generator. Create recipes in json format with a name, list of ingredients, and cooking instructions based on the description provided.',
   })
   .arguments({
     description: a.string(),
@@ -31,6 +31,6 @@ export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
   authorizationModes: {
-    defaultAuthorizationMode: 'identityPool',
+    defaultAuthorizationMode: 'userPool',
   },
 });
